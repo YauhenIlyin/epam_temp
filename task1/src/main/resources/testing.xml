@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SuiteDependentPrior" verbose="1">
+    <test name="Test Group_Main">
+        <groups>
+            <run>
+                <include name="base_flow"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="by.ilyineugene.arrayapp.reader.ArrayReaderTest"/>
+            <class name="by.ilyineugene.arrayapp.validator.ArrayStringValidatorTest"/>
+            <class name="by.ilyineugene.arrayapp.parser.impl.ArrayParserImplTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Candies
+        xmlns="https://github.com/YauhenIlyin/epam-course-java-basics"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="E:\programming\temp\epam\task2\src\main\resources\data\xml\temp\candies.xsd">
+
+    <candy id="i1">
+        <name>"Sun"</name>
+        <energy>45</energy>
+        <type>
+            <simple-type>CARAMEL</simple-type>
+        </type>
+        <ingredients>
+            <ingredient candy-ingredient-weight="7">
+                <ingredient-type>WATER</ingredient-type>
+            </ingredient>
+            <ingredient candy-ingredient-weight="12">
+                <ingredient-type>SUGAR</ingredient-type>
+            </ingredient>
+            <ingredient candy-ingredient-weight="15">
+                <ingredient-type>BUTTER</ingredient-type>
+            </ingredient>
+            <ingredient candy-ingredient-weight="14">
+                <ingredient-type>LOLLIPOP_CARAMEL</ingredient-type>
+            </ingredient>
+        </ingredients>
+        <value>
+            <proteins>13</proteins>
+            <fats>22</fats>
+            <carbohydrates>12</carbohydrates>
+        </value>
+        <production>Belarus</production>
+    </candy>
+
+    <candy id="i2">
+        <name>"Ship"</name>
+        <energy>70</energy>
+        <type filling-type="NUT">
+            <simple-type>CHOCOLATE</simple-type>
+        </type>
+        <ingredients>
+            <ingredient candy-ingredient-weight="7">
+                <ingredient-type>WATER</ingredient-type>
+            </ingredient>
+            <ingredient candy-ingredient-weight="18">
+                <ingredient-type>SUGAR</ingredient-type>
+            </ingredient>
+            <ingredient candy-ingredient-weight="15">
+                <ingredient-type>BUTTER</ingredient-type>
+            </ingredient>
+            <ingredient candy-ingredient-weight="30">
+                <ingredient-type>NUTS</ingredient-type>
+            </ingredient>
+            <ingredient candy-ingredient-weight="14">
+                <ingredient-type>BLACK_CHOCOLATE</ingredient-type>
+            </ingredient>
+        </ingredients>
+        <value>
+            <proteins>22</proteins>
+            <fats>17</fats>
+            <carbohydrates>41</carbohydrates>
+        </value>
+        <production>Belarus</production>
+    </candy>
+</Candies>

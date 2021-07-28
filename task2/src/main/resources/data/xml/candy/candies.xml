@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candies
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="candies-ns"
+        xsi:schemaLocation="candies-ns candies.xsd">
+    <candy_entity id="i1">
+        <name>Sun</name>
+        <energy>25</energy>
+        <type filling="NUT">
+            <candy_type>CARAMEL</candy_type>
+        </type>
+        <ingredients>
+            <ingredient>
+                <ingredient_type>WATER</ingredient_type>
+                <ingredient_weight>7</ingredient_weight>
+            </ingredient>
+            <ingredient>
+                <ingredient_type>SUGAR</ingredient_type>
+                <ingredient_weight>12</ingredient_weight>
+            </ingredient>
+            <ingredient>
+                <ingredient_type>BUTTER</ingredient_type>
+                <ingredient_weight>14</ingredient_weight>
+            </ingredient>
+            <ingredient>
+                <ingredient_type>BLACK_CHOCOLATE</ingredient_type>
+                <ingredient_weight>27</ingredient_weight>
+            </ingredient>
+        </ingredients>
+        <value>
+            <proteins_weight>14</proteins_weight>
+            <fats_weight>22</fats_weight>
+            <carbohydrates_weight>18</carbohydrates_weight>
+        </value>
+        <production>Honey Fabric</production>
+        <creation_data>1991-08-04</creation_data>
+    </candy_entity>
+
+    <candy_entity id="i2">
+        <name>Sun</name>
+        <energy>25</energy>
+        <type filling="NUT">
+            <candy_type>CARAMEL</candy_type>
+        </type>
+        <ingredients>
+            <ingredient>
+                <ingredient_type>WATER</ingredient_type>
+                <ingredient_weight>7</ingredient_weight>
+            </ingredient>
+            <ingredient>
+                <ingredient_type>SUGAR</ingredient_type>
+                <ingredient_weight>12</ingredient_weight>
+            </ingredient>
+            <ingredient>
+                <ingredient_type>BUTTER</ingredient_type>
+                <ingredient_weight>14</ingredient_weight>
+            </ingredient>
+            <ingredient>
+                <ingredient_type>BLACK_CHOCOLATE</ingredient_type>
+                <ingredient_weight>27</ingredient_weight>
+            </ingredient>
+        </ingredients>
+        <value>
+            <proteins_weight>14</proteins_weight>
+            <fats_weight>22</fats_weight>
+            <carbohydrates_weight>18</carbohydrates_weight>
+        </value>
+        <production>Honey Fabric</production>
+        <creation_data>1991-08-04</creation_data>
+    </candy_entity>
+</candies>

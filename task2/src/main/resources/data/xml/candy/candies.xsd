@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="candies-ns"
+        xmlns:xsc="candies-ns"
+        elementFormDefault="qualified">
+
+    <import namespace="http://www.w3.org/2001/XMLSchema"
+            schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
+
+    <!-- root element -->
+    <element name="candies">
+        <complexType>
+            <sequence>
+                <element name="candy_entity" type="xsc:candy_entity" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <!-- child element -->
+    <complexType name="candy_entity">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="energy" type="int"/>
+            <element name="type" type="xsc:type"/>
+            <element name="ingredients" type="xsc:ingredients"/>
+            <element name="value" type="xsc:value"/>
+            <element name="production" type="xsc:production"/>
+            <element name="creation_data" type="date"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+
+
+    <complexType name="type">
+        <sequence>
+            <element name="candy_type" type="xsc:candy_type"/>
+        </sequence>
+        <attribute name="filling" use="optional"/>
+    </complexType>
+
+    <simpleType name="candy_type">
+        <restriction base="string">
+            <enumeration value="CHOCOLATE"/>
+            <enumeration value="CARAMEL"/>
+            <enumeration value="GELATIN"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="filling">
+        <restriction base="string">
+            <enumeration value="NUT"/>
+            <enumeration value="LIQUEUR"/>
+            <enumeration value="MEAD"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="ingredients">
+        <sequence>
+            <element name="ingredient" type="xsc:ingredient" minOccurs="3" maxOccurs="6"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="ingredient">
+        <sequence>
+            <element name="ingredient_type" type="xsc:ingredient_type"/>
+            <element name="ingredient_weight" type="xsc:ingredient_weight"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="ingredient_type">
+        <restriction base="string">
+            <enumeration value="WATER"/>
+            <enumeration value="SUGAR"/>
+            <enumeration value="MILK"/>
+            <enumeration value="COFFEE"/>
+            <enumeration value="COCOA"/>
+            <enumeration value="BUTTER"/>
+            <enumeration value="BLACK_CHOCOLATE"/>
+            <enumeration value="WHITE_CHOCOLATE"/>
+            <enumeration value="LOLLIPOP_CARAMEL"/>
+            <enumeration value="SOFT_CARAMEL"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="ingredient_weight">
+        <restriction base="positiveInteger"/>
+    </simpleType>
+
+    <complexType name="value">
+        <sequence>
+            <element name="proteins_weight" type="xsc:ingredient_weight"/>
+            <element name="fats_weight" type="xsc:fats_weight"/>
+            <element name="carbohydrates_weight" type="xsc:carbohydrates_weight"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="proteins_weight">
+        <restriction base="int">
+            <minExclusive value="1"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="fats_weight">
+        <restriction base="int">
+            <minExclusive value="1"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="carbohydrates_weight">
+        <restriction base="int">
+            <minExclusive value="1"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="production">
+        <restriction base="string">
+            <pattern value="([a-zA-Z\s])+"/>
+            <whiteSpace value="preserve"/>
+        </restriction>
+    </simpleType>
+
+</schema>

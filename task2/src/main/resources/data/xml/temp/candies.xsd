@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns="https://github.com/YauhenIlyin/epam-course-java-basics"
+        targetNamespace="https://github.com/YauhenIlyin/epam-course-java-basics"
+        elementFormDefault="qualified">
+
+
+    <!--root element-->
+    <xs:element name="Candies">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="candy" type="candy-entity" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <!--child element-->
+    <xs:complexType name="candy-entity">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="energy" type="xs:int"/>
+            <xs:element name="type" type="candy-type"/>
+            <xs:element name="ingredients" type="candy-ingredients"/>
+            <xs:element name="value" type="candy-value"/>
+            <xs:element name="production" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="candy-type">
+        <xs:sequence>
+            <xs:element name="simple-type" type="candy-simple-type"/>
+        </xs:sequence>
+        <xs:attribute name="filling-type" type="candy-filling-type"/>
+    </xs:complexType>
+
+    <xs:simpleType name="candy-simple-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CHOCOLATE"/>
+            <xs:enumeration value="CARAMEL"/>
+            <xs:enumeration value="GELATIN"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="candy-filling-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NUT"/>
+            <xs:enumeration value="LIQUEUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="candy-ingredients">
+        <xs:sequence>
+            <xs:element name="ingredient" type="candy-ingredient" minOccurs="3" maxOccurs="5"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="candy-ingredient">
+        <xs:sequence>
+            <xs:element name="ingredient-type" type="candy-ingredient-type"/>
+        </xs:sequence>
+        <xs:attribute name="candy-ingredient-weight" type="xs:int" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="candy-ingredient-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="WATER"/>
+            <xs:enumeration value="SUGAR"/>
+            <xs:enumeration value="MILK"/>
+            <xs:enumeration value="COFFEE"/>
+            <xs:enumeration value="COCOA"/>
+            <xs:enumeration value="BUTTER"/>
+            <xs:enumeration value="NUTS"/>
+            <xs:enumeration value="BLACK_CHOCOLATE"/>
+            <xs:enumeration value="WHITE_CHOCOLATE"/>
+            <xs:enumeration value="LOLLIPOP_CARAMEL"/>
+            <xs:enumeration value="SOFT_CARAMEL"/>
+            <xs:enumeration value="LIQUEUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="candy-value">
+        <xs:sequence>
+            <xs:element name="proteins" type="xs:int"/>
+            <xs:element name="fats" type="xs:int"/>
+            <xs:element name="carbohydrates" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
