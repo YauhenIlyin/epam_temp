@@ -1,47 +1,73 @@
 package by.ilyineugen.handling.entity;
 
+import by.ilyineugen.handling.evidence.TextComponentType;
+
 import java.util.ArrayList;
-import java.util.List;
 
-public class TextComposite implements Component {
+public class TextComposite implements TextComponent {
 
+    private ArrayList<TextComponent> textComponents = new ArrayList<>();
+    private TextComponentType textComponentType;
 
-    private char simpleElement;
-    private Type type;
-    private List<Component> components = new ArrayList<>();
-
-    public TextComposite(Type type) {
-        this.type = type;
-    } bvbv b b bbb
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
+    public TextComposite(TextComponentType textComponentType) {
+        this.textComponentType = textComponentType;
     }
 
     @Override
-    public void add(Component component) {
-        components.add(component);
+    public void add(TextComponent textComponent) {
+        textComponents.add(textComponent);
     }
 
     @Override
-    public Object getChild(int index) {
-        return components.get(index);
+    public TextComponentType getTextComponentType() {
+        return this.textComponentType;
+    }
+
+    public ArrayList<TextComponent> getTextComponents() {
+        return this.textComponents;
     }
 
     @Override
-    public void remove(Component component) {
+    public TextComponent getChild(int index) { //где проверка запрашиваемого индекса
+        return textComponents.get(index);
+    }
+
+    @Override
+    public int getComponentSize() {
+        return this.textComponents.size();
+    }
+
+    @Override
+    public void swapChildElements(int indexOne, int indexTwo) {
 
     }
 
     @Override
-    public void operation() {
-        int size = components.size();
+    public void remove(TextComponent textComponent) {
+        textComponents.remove(textComponent);
+    }
+
+    @Override
+    public String operation() {
+        String str = "";
+        int size = textComponents.size();
         for (int i = 0; i < size; i++) {
-            components.get(i).operation();
+            str = str + textComponents.get(i).operation();
+
         }
+        return str;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(1);
+        if (this.textComponentType.equals(TextComponentType.WORD)) {
+            sb.append("[WORD:]");
+        }
+        int currentCompositeLevelSize = textComponents.size();
+        for (int index = 0; index < currentCompositeLevelSize; index++) {
+            sb.append(textComponents.get(index).toString());
+        }
+        return sb.toString();
     }
 }
